@@ -1,14 +1,12 @@
-from signal import signal
 from zxtouch.client import zxtouch
 from zxtouch.touchtypes import *
 from zxtouch.toasttypes import *
 import time
-import signal
-import sys
 
 
-device = zxtouch("127.0.0.1")
-    
+# device = zxtouch("127.0.0.1")
+device = zxtouch("192.168.137.59")
+
 def compare_color(c1: dict, c2: tuple):
     if int(c1["red"]) == c2[0] and int(c1["green"]) == c2[1]:
         return True
@@ -19,15 +17,10 @@ def real_touch(x: int, y: int):
     device.touch(TOUCH_UP, 1, x, y)
     # time.sleep(0.5)
 
-def handler(sig: int, frame):
-    device.disconnect()
-    print("\nExited with Ctrl+C")
-    sys.exit(0)
 
 while True:
-        signal.signal(signal.SIGINT, handler)
         # sta
-        if compare_color(device.pick_color(530, 1017)[1], (211, 97, 58)):
+        if compare_color(device.pick_color(421, 1263)[1], (242, 238, 13)):
             real_touch(341, 1100)
         # start
         elif compare_color(device.pick_color(663, 1555)[1], (169, 48, 48)):
@@ -47,5 +40,5 @@ while True:
         elif compare_color(device.pick_color(762, 1592)[1], (255,239,238)):
             device.show_toast(TOAST_MESSAGE, "The script has been terminated", 2)
             device.disconnect()
-            break()
+            break
         real_touch(50, 1700)

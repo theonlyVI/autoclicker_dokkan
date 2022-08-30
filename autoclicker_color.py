@@ -8,7 +8,7 @@ import signal
 import sys
 
 
-device = zxtouch("192.168.137.202")
+device = zxtouch("192.168.137.59")
 # device = zxtouch("10.0.0.230")
 
 
@@ -21,17 +21,16 @@ device = zxtouch("192.168.137.202")
 # device.touch(TOUCH_UP, 1, 400, 1150)
 
 def main():
-    print(device.image_match("/var/mobile/Library/ZXTouch/scripts/img/IMG_9125.JPG", 0.95, 4, 1))
-    print(device.search_color((611, 1483, 200, 300), 210, 255, 220, 255, 220, 255))
-    # print(device.pick_color(312, 1195))
-    # print(device.search_color((360, 1024, 300, 200), 200, 255, 100, 255, 0, 50))
-
+    # print(device.image_match("/var/mobile/Library/ZXTouch/scripts/img/IMG_9125.JPG", 0.95, 4, 1))
+    # print(device.search_color((611, 1483, 200, 300), 210, 255, 220, 255, 220, 255))
+    # print(device.pick_color(530, 1017))
+    
     
     # sta
     while True:
         signal.signal(signal.SIGINT, handler)
         # sta
-        if compare_color(device.pick_color(530, 1017)[1], (211, 97, 58)):
+        if compare_color(device.pick_color(421, 1263)[1], (242, 238, 13)):
             real_touch(341, 1100)
         # start
         elif compare_color(device.pick_color(663, 1555)[1], (169, 48, 48)):
