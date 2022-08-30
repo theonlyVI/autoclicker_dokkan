@@ -4,8 +4,8 @@ from zxtouch.toasttypes import *
 import time
 
 
-# device = zxtouch("127.0.0.1")
-device = zxtouch("192.168.137.59")
+device = zxtouch("127.0.0.1")
+# device = zxtouch("192.168.137.59")
 
 def compare_color(c1: dict, c2: tuple):
     if int(c1["red"]) == c2[0] and int(c1["green"]) == c2[1]:
