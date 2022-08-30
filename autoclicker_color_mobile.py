@@ -37,7 +37,7 @@ while True:
             real_touch(250, 1080)
         elif compare_color(device.pick_color(230, 1580)[1], (7, 35, 80)):
             real_touch(389, 1529)
-        elif compare_color(device.pick_color(762, 1592)[1], (255,239,238)):
+        elif compare_color(device.pick_color(705, 1663)[1], (234,67,53)):
             device.show_toast(TOAST_MESSAGE, "The script has been terminated", 2)
             device.disconnect()
             break

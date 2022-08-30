@@ -7,7 +7,7 @@ import signal
 import sys
 
 
-device = zxtouch("192.168.137.102")
+device = zxtouch("192.168.137.59")
 
 # device.touch(TOUCH_DOWN, 5, 400, 400)
 # device.show_toast(TOAST_MESSAGE, "this is test program", 2)

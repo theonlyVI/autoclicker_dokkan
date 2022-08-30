@@ -24,7 +24,7 @@ def main():
     # print(device.image_match("/var/mobile/Library/ZXTouch/scripts/img/IMG_9125.JPG", 0.95, 4, 1))
     # print(device.search_color((611, 1483, 200, 300), 210, 255, 220, 255, 220, 255))
     # print(device.pick_color(530, 1017))
-    
+
     
     # sta
     while True:
@@ -47,8 +47,10 @@ def main():
             real_touch(250, 1080)
         elif compare_color(device.pick_color(230, 1580)[1], (7, 35, 80)):
             real_touch(389, 1529)
-        elif compare_color(device.pick_color(762, 1592)[1], (255,239,238)):
+        elif compare_color(device.pick_color(705, 1663)[1], (234,67,53)):
             device.show_toast(TOAST_MESSAGE, "The program has been terminated", 2)
+            device.disconnect()
+            break
         real_touch(50, 1700)
 
 def compare_color(c1: dict, c2: tuple):
