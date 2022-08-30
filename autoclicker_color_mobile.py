@@ -1,4 +1,3 @@
-from array import array
 from signal import signal
 from zxtouch.client import zxtouch
 from zxtouch.touchtypes import *
@@ -46,7 +45,7 @@ while True:
         elif compare_color(device.pick_color(230, 1580)[1], (7, 35, 80)):
             real_touch(389, 1529)
         elif compare_color(device.pick_color(762, 1592)[1], (255,239,238)):
-            device.show_toast(TOAST_MESSAGE, "The program has been terminated", 2)
+            device.show_toast(TOAST_MESSAGE, "The script has been terminated", 2)
             device.disconnect()
             break()
         real_touch(50, 1700)
